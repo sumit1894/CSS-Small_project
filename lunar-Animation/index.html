@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LunarAnimation</title>
+</head>
+<style>
+    body{
+        background-color: #eebfbf;
+        height: 100vh;
+        width: 100vw;   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        width: 25rem;
+        height: 25rem;
+        background-color: rgba(67, 54, 3, 0.823);
+        position: relative;
+        animation: bgcolor 10s ease-in-out infinite;
+    }
+    @keyframes bgcolor{
+        0%{
+            background-color: rgba(0, 0, 0, 0.507);
+        }
+        50%{
+            background-color: black;
+        }
+        100%{
+            background-color: rgba(0, 0, 0, 0.435);
+        }
+        
+    }
+    .sun{
+        overflow: hidden;
+        position: relative;
+        aspect-ratio: 1;
+        width: 15rem;
+        background-color: rgb(255, 242, 0);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .sun::after{
+        content: "";
+        position: absolute;
+        aspect-ratio: 1;
+        width: 14rem;
+        background-color: rgb(0, 0, 0);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: rotate 10s  ease-in-out infinite;
+    }
+    @keyframes rotate {
+        0%{
+            translate: 100%;
+            /* scale: 1; */
+        }
+        50%{
+            translate: 0%;
+            /* scale: 0.9; */
+        }
+        100%{
+            translate: -100%;
+            /* scale: 0.9; */
+        }
+        
+    }
+
+</style>
+<body>
+        <div class="container">
+            <div class="sun"></div>
+
+        </div>
+</body>
+</html>
